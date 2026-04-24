@@ -8,8 +8,7 @@ struct SYM {
 };
 
 template <typename T> class TPQueue {
-
-private:
+ private:
   struct Item {
     T data;
     Item *next;
@@ -24,7 +23,7 @@ private:
     return item;
   }
 
-public:
+ public:
   void push(const T &value) {
     Item *item = create(value);
 
@@ -47,10 +46,6 @@ public:
   }
 
   T pop() {
-    if (!head) {
-      throw std::runtime_error("Queue is empty");
-    }
-
     Item *temp = head;
     T value = temp->data;
     head = head->next;
